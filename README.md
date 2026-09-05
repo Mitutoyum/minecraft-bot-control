@@ -4,10 +4,10 @@ Minecraft utility tool for controlling and managing bots
 
 ## Installation
  
-Install [NodeJS](https://nodejs.org)
+Install [NodeJS](https://nodejs.org) and run these commands in a terminal
 
 ```bash
-git clone https://github.com/<your-username>/minecraft-bot-control.git
+git clone https://github.com/Mitutoyum/minecraft-bot-control.git
 cd minecraft-bot-control
 npm install
 ```
