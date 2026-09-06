@@ -1,5 +1,6 @@
 import mineflayer from 'mineflayer'
 import logger from './logger.js'
+import names from './names.json' with { type: 'json' }
 
 export function spawnBot(options) {
     const bot = mineflayer.createBot(options)
@@ -53,13 +54,21 @@ export function randomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
+
+const WORDS = [
+  'Tiger', 'Moon', 'Dragon', 'Shadow', 'Storm', 'Wolf', 'Star', 'Phoenix',
+  'Falcon', 'Blaze', 'Frost', 'Raven', 'Comet', 'Ghost', 'Viper', 'Thunder',
+  'Eagle', 'Shark', 'Panther', 'Cobra', 'Flame', 'Nova', 'Hawk', 'Rider',
+  'Hunter', 'Reaper', 'Knight', 'Wizard', 'Ninja', 'Fox', 'Bear', 'Lion',
+  'Wraith', 'Spirit', 'Blade', 'Arrow', 'Sky', 'Sun', 'Ice', 'Fire',
+  'Wind', 'Rain', 'Titan', 'Rocket', 'Rebel', 'Ranger', 'Scout',
+  'Legend', 'Myth', 'Echo', 'Pulse', 'Vortex', 'Zenith', 'Nomad', 'Drift'
+]
+
 export function randomName() {
-  const length = randomInt(6, 12)
-  const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
-  const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  let name = letters[randomInt(0, letters.length - 1)]
-  for (let i = 1; i < length; i++) {
-    name += chars[randomInt(0, chars.length - 1)]
-  }
-  return name
+  const firstName = names[randomInt(0, names.length - 1)]
+  const word = WORDS[randomInt(0, WORDS.length - 1)]
+  const number = randomInt(1, 9999)
+
+  return `${firstName}${word}${number}`
 }
