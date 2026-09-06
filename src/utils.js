@@ -6,7 +6,7 @@ export function spawnBot(options) {
     const bot = mineflayer.createBot(options)
     const username = options.username
 
-    bot.on('spawn', () => {
+    bot.once('spawn', () => {
         logger.log(`✅ ${username} spawned`)
     })
 
