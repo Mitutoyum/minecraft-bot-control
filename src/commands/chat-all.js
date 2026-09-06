@@ -12,7 +12,11 @@ export default {
         }
 
         for (const [name, bot] of Object.entries(context.state.bots)) {
-            bot.chat(message);
+            try {
+                bot.chat(message);
+            } catch (err) {
+                logger.log(`⚠️  ${name} failed to send chat: ${err.message}`);
+            }
         }
     }
 }
