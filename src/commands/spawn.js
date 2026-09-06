@@ -16,6 +16,12 @@ function registerBot(state, username) {
 
     let was_banned = false;
 
+    bot._client.on('packet', (data, meta) => {
+        if (meta.name === 'show_dialog') {
+            console.dir(data, {depth: null});
+        }
+    })
+
     bot.on('kicked', (reason) => {
         if (reason.type == 'compound' && reason.value.translate.value == 'multiplayer.disconnect.banned') {
             was_banned = true;
