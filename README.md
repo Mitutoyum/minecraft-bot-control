@@ -1,6 +1,6 @@
 # Minecraft Bot Control
 
-Minecraft utility tool for controlling and managing bots
+Minecraft tool for controlling bots
 
 ## Installation
  
