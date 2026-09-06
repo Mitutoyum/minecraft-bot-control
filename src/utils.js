@@ -19,12 +19,12 @@ export function spawnBot(options) {
         const type = reason.type
 
         if (type === 'string') {
-            logger.log(`⚠️ ${username} kicked: ${reason.value}`)
+            logger.log(`⚠️  ${username} kicked: ${reason.value}`)
         } else if (type === 'compound') {
             if (reason.value.translate.value == 'multiplayer.disconnect.banned') {
-                logger.log(`⚠️ ${username} banned`)
+                logger.log(`⚠️  ${username} banned`)
             } else {
-                logger.log(`⚠️ ${username} kicked`)
+                logger.log(`⚠️  ${username} kicked`)
             }
         }
     })
@@ -40,7 +40,7 @@ export function spawnBot(options) {
         if (was_kicked)
             return
 
-        logger.log(`⚠️ ${username} error:`, err.message)
+        logger.log(`⚠️  ${username} error:`, err.message)
     })
     
     return bot
